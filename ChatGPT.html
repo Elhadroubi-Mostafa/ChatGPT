@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript ChatGPT Clone</title>
+  <link rel="stylesheet" href="ChatGPT.css">
+</head>
+<body>
+  <section class="side-bar">
+    <button>New chat</button>
+    <div class="history">
+
+    </div>
+    <nav>
+      <p>Made by Mostafa</p>
+    </nav>
+  </section>
+  <section class="main">
+    <h1>MostafaGPT</h1>
+    <p id="output"></p>
+    <div class="bottom-section">
+      <div class="input-container">
+        <input type="text">
+        <div id="submit">➢</div>
+      </div>
+    </div>
+    <p class="info">Chat GPT Mar 14 version.</p>
+  </section>
+  <script>
+    const API_KEY = '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';
+    const submitButton = document.querySelector('#submit');
+
+    async function getMessage() {
+      console.log('clicked');
+      const options = {
+        method: 'POST',
+        headers: {
+          'Authorization':
+        }
+      }
+      try{
+        await fetch('https://api.openai.com/v1/chat/completions', options)
+      }catch{
+
+      }
+    }
+    submitButton.addEventListener('click', getMessage)
+  </script>
+</body>
+</html>
